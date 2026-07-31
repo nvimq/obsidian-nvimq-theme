@@ -1,0 +1,8 @@
+{
+  "name": "nvimq",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "author": "Nurdaulet",
+  "authorUrl": "https://github.com/nvimq/obsidian-nvimq-theme",
+  "description": "Чёрно-белый металлический минимализм с фиолетовым акцентом и прозрачностью. Ghostty-стиль для Obsidian."
+}

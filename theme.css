@@ -1,0 +1,1049 @@
+/* ===========================================================
+   🖥️  nvimq — Obsidian Theme
+   ────────────────────────────────────────────
+   Чёрно-белый металлический минимализм
+   с фиолетовым акцентом и прозрачностью.
+   Ghostty-стиль.
+   
+   Author: Nurdaulet
+   Version: 1.0.0
+   =========================================================== */
+
+/* ── ОБЩИЕ ПЕРЕМЕННЫЕ ── */
+:root {
+  /* Шрифты */
+  --nvimq-font: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --nvimq-font-ui: 'JetBrains Mono', 'SF Pro', -apple-system, sans-serif;
+  --nvimq-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+  /* Металлические оттенки */
+  --nvimq-metal-light: #b8b8b8;
+  --nvimq-metal: #8a8a8a;
+  --nvimq-metal-dark: #5a5a5a;
+  --nvimq-steel: #6b7280;
+  --nvimq-chrome: #e0e0e0;
+
+  /* Фиолетовый акцент */
+  --nvimq-purple: #bd93f9;
+  --nvimq-purple-dark: #9876e0;
+  --nvimq-purple-light: #d4b8ff;
+  --nvimq-purple-glow: rgba(189, 147, 249, 0.15);
+  --nvimq-purple-subtle: rgba(189, 147, 249, 0.08);
+
+  /* Прозрачность */
+  --nvimq-blur: 16px;
+  --nvimq-blur-heavy: 24px;
+  --nvimq-bg-opacity: 0.55;
+  --nvimq-panel-opacity: 0.7;
+  --nvimq-element-opacity: 0.8;
+
+  /* Скругления */
+  --nvimq-radius-sm: 2px;
+  --nvimq-radius: 4px;
+  --nvimq-radius-lg: 8px;
+  --nvimq-radius-xl: 12px;
+
+  /* Тени */
+  --nvimq-glow: 0 0 20px rgba(189, 147, 249, 0.05);
+  --nvimq-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --nvimq-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ═══════════════════════════════════════════
+   ТЁМНАЯ ТЕМА (nvimq-dark)
+   ═══════════════════════════════════════════ */
+.theme-dark {
+  /* ── Базовые цвета ── */
+  --color-base-00: #000000;
+  --color-base-10: #0a0a0f;
+  --color-base-20: #111118;
+  --color-base-25: #181820;
+  --color-base-30: #1e1e28;
+  --color-base-35: #252530;
+  --color-base-40: #2e2e3a;
+  --color-base-50: #686878;
+  --color-base-60: #888898;
+  --color-base-70: #a8a8b8;
+  --color-base-100: #e0e0e8;
+
+  /* ── Фоны ── */
+  --background-primary: #0a0a0f;
+  --background-primary-alt: #0d0d14;
+  --background-secondary: #0f0f18;
+  --background-secondary-alt: #14141e;
+  --background-modifier-border: rgba(255, 255, 255, 0.08);
+  --background-modifier-border-hover: rgba(189, 147, 249, 0.15);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-error: #ff4444;
+  --background-modifier-error-hover: #ff6666;
+  --background-modifier-success: #50fa7b;
+  --background-modifier-message: rgba(0, 0, 0, 0.8);
+
+  /* ── Текст ── */
+  --text-normal: #e0e0e8;
+  --text-muted: #b0b0c0;
+  --text-faint: #808090;
+  --text-accent: var(--nvimq-purple);
+  --text-accent-hover: var(--nvimq-purple-light);
+  --text-error: #ff4444;
+  --text-success: #50fa7b;
+  --text-warning: #ffb86c;
+  --text-on-accent: #000000;
+  --text-selection: rgba(189, 147, 249, 0.2);
+
+  /* ── Акцент ── */
+  --interactive-accent: var(--nvimq-purple);
+  --interactive-accent-hover: var(--nvimq-purple-dark);
+  --interactive-normal: rgba(30, 30, 40, 0.8);
+  --interactive-hover: rgba(40, 40, 55, 0.8);
+  --interactive-success: #50fa7b;
+
+  /* ── Акцентный цвет Obsidian ── */
+  --accent-h: 265;
+  --accent-s: 82%;
+  --accent-l: 78%;
+
+  /* ─-- Заголовки ── */
+  --h1-color: var(--nvimq-chrome);
+  --h2-color: var(--nvimq-metal-light);
+  --h3-color: var(--nvimq-metal);
+  --h4-color: var(--nvimq-metal);
+  --h5-color: var(--nvimq-metal-dark);
+  --h6-color: var(--nvimq-metal-dark);
+
+  --h1-font: var(--nvimq-font);
+  --h2-font: var(--nvimq-font);
+  --h3-font: var(--nvimq-font);
+  --h4-font: var(--nvimq-font);
+  --h5-font: var(--nvimq-font);
+  --h6-font: var(--nvimq-font);
+
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 500;
+  --h6-weight: 500;
+
+  --h1-size: 1.6em;
+  --h2-size: 1.3em;
+  --h3-size: 1.15em;
+  --h4-size: 1.0em;
+  --h5-size: 0.9em;
+  --h6-size: 0.85em;
+
+  --h1-variant: normal;
+  --h2-variant: normal;
+  --h3-variant: normal;
+  --h4-variant: normal;
+  --h5-variant: normal;
+  --h6-variant: normal;
+
+  /* ── Таблицы ── */
+  --table-header-font: var(--nvimq-font);
+  --table-header-weight: 600;
+  --table-header-color: var(--nvimq-metal-light);
+  --table-header-border: 1px solid rgba(255, 255, 255, 0.05);
+  --table-background: transparent;
+  --table-border-width: 0;
+  --table-row-alt-background: rgba(255, 255, 255, 0.02);
+
+  /* ── Код ── */
+  --code-font: var(--nvimq-font-mono);
+  --code-background: rgba(0, 0, 0, 0.4);
+  --code-normal: var(--nvimq-chrome);
+  --code-comment: #5a5a6a;
+  --code-function: var(--nvimq-purple);
+  --code-keyword: #ff79c6;
+  --code-important: #ffb86c;
+  --code-operator: var(--nvimq-metal-light);
+  --code-property: #8be9fd;
+  --code-punctuation: var(--nvimq-metal);
+  --code-string: #50fa7b;
+  --code-tag: #ff79c6;
+  --code-value: #ffb86c;
+
+  /* ── Разное ── */
+  --link-color: #8be9fd;
+  --link-color-hover: #b0f0ff;
+  --link-unresolved-color: var(--nvimq-metal-dark);
+  --link-external-color: #8be9fd;
+  --link-external-color-hover: #b0f0ff;
+  --tag-color: var(--nvimq-purple);
+  --tag-background: rgba(189, 147, 249, 0.08);
+  --tag-border: none;
+  --checkbox-color: var(--nvimq-purple);
+  --checkbox-color-hover: var(--nvimq-purple-light);
+  --checkbox-border-color: rgba(255, 255, 255, 0.1);
+  --checklist-done-color: var(--nvimq-metal-dark);
+  --blockquote-border-color: var(--nvimq-purple);
+  --blockquote-background-color: rgba(189, 147, 249, 0.03);
+  --nav-item-color: #5A9C9C;
+  --nav-item-color-hover: #7ABCBC;
+  --nav-item-color-active: var(--nvimq-purple);
+  --nav-item-background-hover: rgba(255, 255, 255, 0.03);
+  --nav-item-background-active: rgba(189, 147, 249, 0.1);
+  --nav-item-padding: 4px 8px;
+  --indentation-guide-color: rgba(255, 255, 255, 0.03);
+  --indentation-guide-width: 1px;
+
+  /* ── Размеры ── */
+  --font-normal: 14px;
+  --font-small: 13px;
+  --font-smaller: 12px;
+  --font-smallest: 11px;
+  --font-mono: var(--nvimq-font-mono);
+  --line-height: 1.6;
+  --line-height-tight: 1.4;
+  --radius-s: var(--nvimq-radius-sm);
+  --radius-m: var(--nvimq-radius);
+  --radius-l: var(--nvimq-radius-lg);
+  --radius-xl: var(--nvimq-radius-xl);
+  --ribbon-width: 30px;
+}
+
+
+/* ═══════════════════════════════════════════
+   СВЕТЛАЯ ТЕМА (nvimq-light)
+   ═══════════════════════════════════════════ */
+.theme-light {
+  /* ── Базовые цвета (с альфа-каналом для translucency) ── */
+  --color-base-00: rgba(245, 245, 240, 0.85);
+  --color-base-10: rgba(236, 236, 229, 0.88);
+  --color-base-20: rgba(228, 228, 220, 0.9);
+  --color-base-25: rgba(221, 221, 213, 0.92);
+  --color-base-30: rgba(213, 213, 206, 0.93);
+  --color-base-35: rgba(204, 204, 92, 0.93);
+  --color-base-40: rgba(187, 187, 181, 0.94);
+  --color-base-50: rgba(160, 160, 154, 0.94);
+  --color-base-60: rgba(128, 128, 122, 0.94);
+  --color-base-70: rgba(96, 96, 90, 0.94);
+  --color-base-100: rgba(26, 26, 26, 0.95);
+
+  /* ── Фоны transparent для пропуска vibrancy ── */
+  --background-primary: transparent;
+  --background-primary-alt: transparent;
+  --background-secondary: transparent;
+  --background-secondary-alt: transparent;
+  --background-modifier-border: rgba(0, 0, 0, 0.06);
+  --background-modifier-border-hover: rgba(139, 108, 207, 0.15);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
+  --background-modifier-error: #e55;
+  --background-modifier-error-hover: #f77;
+  --background-modifier-success: #4caf50;
+  --background-modifier-message: rgba(255, 255, 255, 0.9);
+
+  /* ── Текст ── */
+  --text-normal: #1a1a1a;
+  --text-muted: #60605a;
+  --text-faint: #a0a09a;
+  --text-accent: #8b6ccf;
+  --text-accent-hover: #6b4caf;
+  --text-error: #e55;
+  --text-success: #4caf50;
+  --text-warning: #d4a04a;
+  --text-on-accent: #ffffff;
+  --text-selection: rgba(139, 108, 207, 0.15);
+
+  /* ── Акцент ── */
+  --interactive-accent: #8b6ccf;
+  --interactive-accent-hover: #6b4caf;
+  --interactive-normal: rgba(213, 213, 206, 0.8);
+  --interactive-hover: rgba(200, 200, 193, 0.8);
+  --interactive-success: #4caf50;
+
+  /* ── Акцентный цвет ── */
+  --accent-h: 262;
+  --accent-s: 46%;
+  --accent-l: 55%;
+
+  /* ── Заголовки ── */
+  --h1-color: #2a2a2a;
+  --h2-color: #4a4a4a;
+  --h3-color: #6a6a6a;
+  --h4-color: #8a8a8a;
+  --h5-color: #9a9a9a;
+  --h6-color: #aaaaaa;
+
+  --h1-font: var(--nvimq-font);
+  --h2-font: var(--nvimq-font);
+  --h3-font: var(--nvimq-font);
+
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 600;
+
+  --h1-size: 1.6em;
+  --h2-size: 1.3em;
+  --h3-size: 1.15em;
+  --h4-size: 1.0em;
+  --h5-size: 0.9em;
+  --h6-size: 0.85em;
+
+  --h1-variant: normal;
+  --h2-variant: normal;
+  --h3-variant: normal;
+
+  /* ── Таблицы ── */
+  --table-header-font: var(--nvimq-font);
+  --table-header-weight: 600;
+  --table-header-color: var(--nvimq-steel);
+  --table-header-border: 1px solid rgba(0, 0, 0, 0.06);
+  --table-background: transparent;
+  --table-border-width: 0;
+  --table-row-alt-background: rgba(0, 0, 0, 0.02);
+
+  /* ── Код ── */
+  --code-font: var(--nvimq-font-mono);
+  --code-background: rgba(0, 0, 0, 0.04);
+  --code-normal: #2a2a2a;
+  --code-comment: #9a9a9a;
+  --code-function: #8b6ccf;
+  --code-keyword: #d63384;
+  --code-important: #d4a04a;
+  --code-operator: #6a6a6a;
+  --code-property: #0891b2;
+  --code-punctuation: #8a8a8a;
+  --code-string: #4caf50;
+  --code-tag: #d63384;
+  --code-value: #d4a04a;
+
+  /* ── Разное ── */
+  --link-color: #0891b2;
+  --link-color-hover: #067a9a;
+  --link-unresolved-color: #b0b0b0;
+  --link-external-color: #0891b2;
+  --link-external-color-hover: #067a9a;
+  --tag-color: #8b6ccf;
+  --tag-background: rgba(139, 108, 207, 0.06);
+  --tag-border: none;
+  --checkbox-color: #8b6ccf;
+  --checkbox-color-hover: #6b4caf;
+  --checkbox-border-color: rgba(0, 0, 0, 0.1);
+  --checklist-done-color: #b0b0b0;
+  --blockquote-border-color: #8b6ccf;
+  --blockquote-background-color: rgba(139, 108, 207, 0.03);
+  --nav-item-color: var(--text-muted);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: #8b6ccf;
+  --nav-item-background-hover: rgba(0, 0, 0, 0.02);
+  --nav-item-background-active: rgba(139, 108, 207, 0.08);
+  --nav-item-padding: 4px 8px;
+  --indentation-guide-color: rgba(0, 0, 0, 0.04);
+  --indentation-guide-width: 1px;
+
+  /* ── Размеры ── */
+  --font-normal: 14px;
+  --font-small: 13px;
+  --font-smaller: 12px;
+  --font-smallest: 11px;
+  --font-mono: var(--nvimq-font-mono);
+  --line-height: 1.6;
+  --line-height-tight: 1.4;
+  --radius-s: var(--nvimq-radius-sm);
+  --radius-m: var(--nvimq-radius);
+  --radius-l: var(--nvimq-radius-lg);
+  --radius-xl: var(--nvimq-radius-xl);
+  --ribbon-width: 30px;
+}
+
+
+/* ═══════════════════════════════════════════
+   ГЛОБАЛЬНЫЕ СТИЛИ (обе темы)
+   ═══════════════════════════════════════════ */
+
+/* ── Базовые настройки ── */
+body {
+  font-family: var(--nvimq-font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── ПРОЗРАЧНОСТЬ ОКНА ── */
+/* Translucency работает через системный vibrancy macOS */
+/* Галочка Translucent Window в настройках Obsidian */
+/* Accessibility → Display → Reduce transparency — выкл */
+/* Фоны transparent + color-base с альфа-каналом = vibrancy проходит */
+
+
+
+
+
+/* ── ЗАГОЛОВКИ ВКЛАДОК ── */
+.workspace-tab-header-container {
+  border-bottom: none !important;
+}
+
+.workspace-tab-header {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 var(--interactive-accent) !important;
+}
+
+.workspace-tab-header-inner {
+  font-family: var(--nvimq-font-ui);
+  font-size: var(--font-small);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  opacity: 1;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner {
+  opacity: 0.9;
+}
+
+/* ── ЛЕНТА (RIBBON) ── */
+.sidebar-toggle-button,
+.workspace-ribbon .clickable-icon {
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+  color: #c0c0d0 !important;
+}
+
+.sidebar-toggle-button:hover,
+.workspace-ribbon .clickable-icon:hover {
+  opacity: 1;
+  color: var(--interactive-accent) !important;
+  text-shadow: 0 0 8px rgba(189, 147, 249, 0.4);
+}
+
+/* ── СТРОКА ЗАГОЛОВКА ОКНА ── */
+.titlebar {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.titlebar-text {
+  font-family: var(--nvimq-font);
+  font-size: var(--font-smallest);
+  opacity: 0.4;
+}
+
+.titlebar-button {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.titlebar-button:hover {
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════
+   ТИПОГРАФИКА И КОНТЕНТ
+   ═══════════════════════════════════════════ */
+
+/* ── ЗАГОЛОВКИ ── */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.cm-header {
+  font-family: var(--nvimq-font-mono) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.markdown-preview-view h1 { border-bottom: none; }
+.markdown-preview-view h2 { border-bottom: none; }
+
+/* ── ССЫЛКИ ── */
+a,
+.cm-hmd-internal-link,
+.markdown-preview-view a.internal-link {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  transition: color 0.15s;
+}
+
+a:hover,
+.cm-hmd-internal-link:hover,
+.markdown-preview-view a.internal-link:hover {
+  color: var(--link-color-hover) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+.external-link {
+  color: var(--link-external-color) !important;
+}
+
+/* ── КОД ── */
+.markdown-preview-view pre,
+.cm-s-obsidian .HyperMD-codeblock {
+  font-family: var(--nvimq-font-mono) !important;
+  font-size: 0.85em !important;
+  line-height: 1.5 !important;
+}
+
+.markdown-preview-view pre {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: var(--radius-m) !important;
+  padding: 1em !important;
+}
+
+.theme-light .markdown-preview-view pre {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.cm-s-obsidian .cm-inline-code {
+  font-family: var(--nvimq-font-mono) !important;
+  font-size: 0.85em !important;
+  background-color: var(--code-background) !important;
+  padding: 1px 4px !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* ── ТАБЛИЦЫ ── */
+.markdown-preview-view table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+.markdown-preview-view th {
+  font-family: var(--table-header-font) !important;
+  font-weight: var(--table-header-weight) !important;
+  color: var(--table-header-color) !important;
+  text-transform: uppercase !important;
+  font-size: 0.8em !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: var(--table-header-border) !important;
+  padding: 8px 12px !important;
+}
+
+.markdown-preview-view td {
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02) !important;
+  padding: 6px 12px !important;
+}
+
+.theme-light .markdown-preview-view td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03) !important;
+}
+
+/* ── БЛОК-ЦИТАТЫ ── */
+.markdown-preview-view blockquote {
+  border-left: 2px solid var(--blockquote-border-color) !important;
+  background-color: var(--blockquote-background-color) !important;
+  padding: 0.5em 1em !important;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+}
+
+/* ── CALLOUTS ── */
+.callout {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  border-left: 2px solid var(--interactive-accent) !important;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  padding: 0.8em 1em !important;
+}
+
+.theme-light .callout {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.callout-title {
+  font-family: var(--nvimq-font) !important;
+  font-weight: 600 !important;
+  font-size: 0.9em !important;
+  gap: 8px !important;
+}
+
+.callout-title-inner {
+  font-family: var(--nvimq-font) !important;
+}
+
+.callout-content {
+  font-size: 0.95em !important;
+}
+
+/* Типы callouts */
+.callout[data-callout="danger"] {
+  border-left-color: #ff4444 !important;
+}
+
+.callout[data-callout="warning"] {
+  border-left-color: #ffb86c !important;
+}
+
+.callout[data-callout="tip"] {
+  border-left-color: #50fa7b !important;
+}
+
+.callout[data-callout="question"] {
+  border-left-color: var(--nvimq-purple) !important;
+}
+
+.callout[data-callout="success"] {
+  border-left-color: #50fa7b !important;
+}
+
+/* ── ЧЕКЛИСТЫ ── */
+.markdown-preview-view ul > li.task-list-item {
+  list-style: none !important;
+}
+
+.markdown-preview-view ul > li.task-list-item.is-checked {
+  text-decoration: line-through !important;
+  opacity: 0.45 !important;
+  color: var(--checklist-done-color) !important;
+}
+
+input[type="checkbox"] {
+  border-radius: var(--radius-sm) !important;
+  cursor: pointer !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--checkbox-color) !important;
+  border-color: var(--checkbox-color) !important;
+}
+
+/* ── ТЭГИ ── */
+.tag {
+  font-family: var(--nvimq-font) !important;
+  font-size: 0.8em !important;
+  font-weight: 500 !important;
+  color: var(--tag-color) !important;
+  background-color: var(--tag-background) !important;
+  border: var(--tag-border) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 1px 6px !important;
+}
+
+.tag:hover {
+  background-color: rgba(189, 147, 249, 0.15) !important;
+}
+
+/* ── ЛИНИИ-РАЗДЕЛИТЕЛИ ── */
+.markdown-preview-view hr {
+  border: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+  margin: 2em 0 !important;
+}
+
+.theme-light .markdown-preview-view hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ── ВЫДЕЛЕНИЕ ТЕКСТА ── */
+.cm-s-obsidian span.cm-highlight,
+mark {
+  background-color: var(--nvimq-purple-subtle) !important;
+  color: var(--nvimq-purple-light) !important;
+  padding: 1px 2px !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.theme-light mark {
+  color: var(--interactive-accent) !important;
+  background-color: rgba(139, 108, 207, 0.08) !important;
+}
+
+/* ── СПИСКИ ── */
+.markdown-preview-view li {
+  margin: 2px 0 !important;
+}
+
+.markdown-preview-view ul {
+  padding-inline-start: 24px !important;
+}
+
+.markdown-preview-view ol {
+  padding-inline-start: 24px !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   ИНТЕРФЕЙС
+   ═══════════════════════════════════════════ */
+
+/* ── ФАЙЛОВЫЙ МЕНЕДЖЕР ── */
+.nav-folder-title,
+.nav-file-title {
+  font-family: var(--nvimq-font-ui);
+  font-size: var(--font-small);
+  padding: var(--nav-item-padding) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background-color: var(--nav-item-background-hover) !important;
+  color: var(--nav-item-color-hover) !important;
+}
+
+.nav-file-title {
+  color: #E8E4D8 !important;
+}
+
+.nav-file-title:hover {
+  color: #F5F2EA !important;
+}
+
+.nav-file-title.is-active {
+  background-color: var(--nav-item-background-active) !important;
+  color: var(--nvimq-purple) !important;
+  border-left: 2px solid var(--interactive-accent) !important;
+}
+
+.nav-folder-collapse-indicator {
+  opacity: 0.3;
+}
+
+/* ── ПОИСК И ПАЛИТРА ── */
+.prompt,
+.suggestion-container {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  -webkit-backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--nvimq-shadow-lg) !important;
+}
+
+.theme-light .prompt,
+.theme-light .suggestion-container {
+  background-color: rgba(245, 245, 240, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.prompt-input {
+  font-family: var(--nvimq-font);
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 0 !important;
+}
+
+.suggestion-item {
+  border-radius: var(--radius-sm) !important;
+  font-family: var(--nvimq-font-ui);
+  font-size: var(--font-small);
+  padding: 6px 12px !important;
+  transition: background-color 0.1s;
+}
+
+.suggestion-item.is-selected {
+  background-color: var(--nvimq-purple-subtle) !important;
+}
+
+.suggestion-hotkey {
+  font-family: var(--nvimq-font);
+  font-size: var(--font-smaller);
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 1px 6px !important;
+  opacity: 0.5;
+}
+
+/* ── СТАТУС-БАР ── */
+.status-bar {
+  font-family: var(--nvimq-font) !important;
+  font-size: var(--font-smaller) !important;
+  background-color: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.02) !important;
+  padding: 2px 12px !important;
+}
+
+.status-bar-item {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.status-bar-item:hover {
+  opacity: 1;
+}
+
+/* ── СКРОЛЛБАР ── */
+::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 2px !important;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ── КНОПКИ ── */
+button:not(.clickable-icon) {
+  font-family: var(--nvimq-font);
+  font-size: var(--font-small);
+  border-radius: var(--radius-sm) !important;
+  border: none !important;
+  padding: 4px 12px !important;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+button:not(.clickable-icon):hover {
+  background-color: var(--nvimq-purple-subtle) !important;
+  color: var(--interactive-accent) !important;
+}
+
+/* ── ДРОПДАУНЫ И ИНПУТЫ ── */
+select,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"] {
+  font-family: var(--nvimq-font);
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.theme-light select,
+.theme-light input[type="text"],
+.theme-light input[type="search"],
+.theme-light input[type="email"],
+.theme-light input[type="password"] {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ── МОДАЛЬНЫЕ ОКНА ── */
+.modal {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  -webkit-backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--nvimq-shadow-lg) !important;
+}
+
+.theme-light .modal {
+  background-color: rgba(245, 245, 240, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.modal-title {
+  font-family: var(--nvimq-font);
+  font-weight: 600;
+}
+
+/* ── НАСТРОЙКИ ── */
+.horizontal-tab-nav-item,
+.vertical-tab-nav-item {
+  font-family: var(--nvimq-font-ui);
+  font-size: var(--font-small);
+  border-radius: var(--radius-sm) !important;
+  transition: background-color 0.15s;
+}
+
+.horizontal-tab-nav-item:hover,
+.vertical-tab-nav-item:hover {
+  background-color: var(--nvimq-purple-subtle) !important;
+}
+
+.horizontal-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active {
+  background-color: rgba(189, 147, 249, 0.12) !important;
+  color: var(--interactive-accent) !important;
+}
+
+/* ── POPOVER ── */
+.popover {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  -webkit-backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+/* ── TOOLTIP ── */
+.tooltip {
+  font-family: var(--nvimq-font);
+  font-size: var(--font-smaller);
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  -webkit-backdrop-filter: blur(var(--nvimq-blur-heavy)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 4px 8px !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ
+   ═══════════════════════════════════════════ */
+
+/* ── СВЁРНУТЫЕ ЗАГОЛОВКИ ── */
+.is-collapsed .nav-folder-title {
+  opacity: 0.6;
+}
+
+/* ── ГРАФ (GRAPH) ── */
+.graph-view.color-fill {
+  color: var(--nvimq-purple) !important;
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--nvimq-purple-light) !important;
+}
+
+.graph-view.color-line {
+  color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.graph-view.color-circle {
+  color: var(--nvimq-purple) !important;
+}
+
+.theme-light .graph-view.color-line {
+  color: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ── КЭНВАС (CANVAS) ── */
+.canvas-card {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+.canvas-card:hover {
+  border-color: rgba(189, 147, 249, 0.2) !important;
+}
+
+/* ── БЭКЛИНКИ ── */
+.backlink-pane {
+  font-family: var(--nvimq-font-ui);
+}
+
+.backlink-pane .search-result-container {
+  background-color: transparent !important;
+}
+
+/* ── СТРОКА ВВОДА В РЕЖИМЕ ИСТОЧНИКА ── */
+.cm-s-obsidian .cm-gutters {
+  background-color: transparent !important;
+  border-right: none !important;
+  color: var(--text-faint) !important;
+  font-size: var(--font-smaller) !important;
+}
+
+.cm-s-obsidian .cm-active {
+  background-color: rgba(189, 147, 249, 0.02) !important;
+}
+
+.cm-s-obsidian .cm-line {
+  padding-left: 8px !important;
+}
+
+/* ── АНИМАЦИЯ ПРИ НАВЕДЕНИИ ── */
+.clickable-icon,
+.nav-action-button,
+.view-action {
+  transition: color 0.15s, background-color 0.15s;
+  opacity: 0.5;
+}
+
+.clickable-icon:hover,
+.nav-action-button:hover,
+.view-action:hover {
+  opacity: 1;
+  color: var(--interactive-accent) !important;
+  background-color: var(--nvimq-purple-subtle) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   СВЕТЛАЯ ТЕМА — ДОПОЛНИТЕЛЬНЫЕ ПЕРЕОПРЕДЕЛЕНИЯ
+   ═══════════════════════════════════════════ */
+.theme-light .workspace-ribbon .clickable-icon:hover {
+  color: var(--interactive-accent) !important;
+}
+
+.theme-light .popover {
+  background-color: rgba(245, 245, 240, 0.9) !important;
+}
+
+.theme-light .tooltip {
+  background-color: rgba(245, 245, 240, 0.9) !important;
+}
+
+.theme-light .suggestion-item.is-selected {
+  background-color: rgba(139, 108, 207, 0.08) !important;
+}
+
+.theme-light .cm-s-obsidian .cm-active {
+  background-color: rgba(139, 108, 207, 0.02) !important;
+}
+
+.theme-light .nav-file-title.is-active {
+  border-left-color: var(--interactive-accent) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   STYLE SETTINGS (для плагина)
+   ═══════════════════════════════════════════ */
+/* Эти настройки позволяют менять параметры через Style Settings */
+/* @settings
+name: nvimq
+id: nvimq-theme
+settings:
+  -
+    id: nvimq-colors-section
+    title: Цвета
+    description: Настройка акцентных цветов
+    type: heading
+    level: 1
+    collapsed: false
+  -
+    id: nvimq-purple-accent
+    title: Акцентный цвет (фиолетовый)
+    description: Основной акцентный цвет темы
+    type: variable-themed-color
+    format: hex
+    default-dark: '#bd93f9'
+    default-light: '#8b6ccf'
+  -
+    id: nvimq-blur-strength
+    title: Сила размытия
+    description: Уровень размытия фона (px)
+    type: variable-number-slider
+    default: 16
+    min: 0
+    max: 32
+    step: 2
+    format: px
+  -
+    id: nvimq-blur-heavy-strength
+    title: Сильное размытие (палитра, модалки)
+    type: variable-number-slider
+    default: 24
+    min: 0
+    max: 48
+    step: 2
+    format: px
+*/
